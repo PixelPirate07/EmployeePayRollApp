@@ -23,8 +23,8 @@ public class Employee {
 
     public Employee(){}
     public Employee(EmployeeDTO employeeDTO){
-        this.name=name;
-        this.salary=salary;
+        this.name=employeeDTO.getName();
+        this.salary=employeeDTO.getSalary();
     }
 
 }
