@@ -1,5 +1,6 @@
 package com.bridgelabz.employeepayrollapp.controller;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.service.EmployeeService;
 import jakarta.validation.Valid;
@@ -26,13 +27,13 @@ public class EmployeeController {
     }
 
     @PostMapping("/create")
-    public Employee createEmployee(@Valid @RequestBody Employee employee) {
-        return employeeService.addEmployee(employee);
+    public Employee createEmployee(@Valid @RequestBody EmployeeDTO employeeDTO) {
+        return employeeService.addEmployee(employeeDTO);
     }
 
     @PutMapping("/update/{id}")
-    public Employee updateEmployee(@PathVariable int id, @Valid @RequestBody Employee employee) {
-        return employeeService.updateEmployee(id, employee);
+    public Employee updateEmployee(@PathVariable int id, @Valid @RequestBody EmployeeDTO employeeDTO) {
+        return employeeService.updateEmployee(id, employeeDTO);
     }
 
     @DeleteMapping("/delete/{id}")
