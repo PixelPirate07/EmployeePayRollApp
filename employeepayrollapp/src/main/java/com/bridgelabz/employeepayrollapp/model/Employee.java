@@ -1,5 +1,6 @@
 package com.bridgelabz.employeepayrollapp.model;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeeDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -19,5 +20,11 @@ public class Employee {
 
     @NotNull(message = "Salary is mandatory")
     private Integer salary;
+
+    public Employee(){}
+    public Employee(EmployeeDTO employeeDTO){
+        this.name=name;
+        this.salary=salary;
+    }
 
 }
